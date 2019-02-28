@@ -1,0 +1,96 @@
+import tkinter as tk
+import turtle
+t = turtle.Pen()
+t.speed(100)
+
+
+root = tk.Tk()
+frame = tk.Frame(root)
+frame.pack()
+
+bottom_frame= tk.Frame(root)
+bottom_frame.pack(side=tk.BOTTOM)
+
+def blue():
+    t.pencolor("blue")
+def red():
+    t.pencolor("red")
+def yellow():
+    t.pencolor("yellow")
+def green():
+    t.pencolor("green")
+    
+def triangle():
+        for x in range(200):
+            t.forward(x)
+            t.left(120)
+
+def square():
+        for x in range(200):
+            t.forward(x)
+            t.left(90)
+
+def leftspiral():
+        for x in range(200):
+            t.forward(x)
+            t.left(91)
+
+def rightspiral():
+        for x in range(200):
+            t.forward(x)
+            t.left(89)
+  
+button = tk.Button(bottom_frame, 
+                   text="Square", 
+                   fg="black",
+                   command= square)
+button.pack(side=tk.LEFT)
+
+button = tk.Button(bottom_frame, 
+                   text="Left Spiral", 
+                   fg="black",
+                   command= leftspiral)
+button.pack(side=tk.LEFT)
+
+button = tk.Button(bottom_frame, 
+                   text="Triangle", 
+                   fg="black",
+                   command= triangle)
+button.pack(side=tk.LEFT)
+
+button = tk.Button(bottom_frame, 
+                   text="Right Spiral", 
+                   fg="black",
+                   command= rightspiral)
+button.pack(side=tk.LEFT)
+
+button = tk.Button(frame, 
+                   text="Red", 
+                   fg="red",
+                   command= red)
+button.pack(side=tk.LEFT)
+
+button = tk.Button(frame, 
+                   text="Blue", 
+                   fg="blue",
+                   command= blue)
+button.pack(side=tk.LEFT)
+
+button = tk.Button(frame, 
+                   text="Yellow", 
+                   fg="yellow",
+                   command= yellow)
+button.pack(side=tk.LEFT)
+
+button = tk.Button(frame, 
+                   text="Green", 
+                   fg="green",
+                   command= green)
+button.pack(side=tk.LEFT)
+
+
+
+
+root.mainloop()
+
+
